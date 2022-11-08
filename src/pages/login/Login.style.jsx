@@ -1,15 +1,16 @@
-import styled from "styled-components";
-import Flex from "../../components/GlobalStyles/Flex.style";
+import styled from 'styled-components';
+import Flex from '../../components/globalStyles/Flex.style';
 
-export const LoginContainer = styled(Flex)`
+
+ export const LoginContainer= styled(Flex)`
   height: 100vh;
-  background-image: url("https://picsum.photos/1600/900");
+  background-image: url('https://picsum.photos/1600/900');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 `;
 
-export const FormContainer = styled(Flex)`
+export const FormContainer= styled(Flex)`
   width: 40rem;
   height: 40rem;
   max-width: 50rem;
