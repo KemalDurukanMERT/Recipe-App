@@ -4,6 +4,7 @@ import Flex from "../globalStyles/Flex.style";
 
 export const Nav = styled(Flex)`
   padding: 1rem 1.5rem;
+  background: ${({theme}) => theme.colors.navbarBgColor}
 `;
 
 export const Brand = styled(Link)`
