@@ -1,40 +1,38 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 import Header from "../../components/header/Header";
 import Cards from "../../components/cards/Cards";
-import { HeaderText, HomeImg, ImgDiv } from "../home/Home.style";
+import { HeaderText, HomeImg, ImgDiv } from "./Home.style";
 import homeSvg from "../../assets/home.svg";
-
 
 const Home = () => {
   const APP_ID =process.env.REACT_APP_APP_ID
   const APP_KEY =process.env.REACT_APP_APP_KEY
-
-
-  const [query, setQuery] = useState("");
+  
+  const [query, setQuery] = useState("egg");
   const [selectedMeal, setSelectedMeal] = useState("breakfast");
   const [recipes, setRecipes] = useState(null);
-  const mealType = ["Breakfast", "Lunch", "Dinner", "Snack", "TeaTime"];
+  const mealType = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
 
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${selectedMeal}`;
+
   const getData = async () => {
     if (query) {
       try {
         const { data } = await axios(url);
         setRecipes(data.hits);
-        // console.log(recipes);
       } catch (error) {
         console.log(error);
       }
     } else {
-      setRecipes(null);
-      alert("Fill the form");
+      alert("Fill the Form");
     }
   };
+  console.log(recipes);
 
-  // useEffect(()=>{
-  //   getData()
-  // }, [])
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <div>
@@ -45,20 +43,18 @@ const Home = () => {
         getData={getData}
       />
 
-      {!recipes ? (
-        // unsuccess fetch
+      {!recipes && (
         <ImgDiv>
           <HomeImg src={homeSvg} />
         </ImgDiv>
-      ) : recipes?.length === 0 ? (
-        // not founded foods
-        <HeaderText>The Food cannot be Found</HeaderText>
-      ) : (
-        // founded foods
-        <Cards recipes={recipes} />
       )}
+
+      {recipes?.length === 0 && (
+        <HeaderText>The Food can not be found</HeaderText>
+      )}
+
+      {recipes?.length > 0 && <Cards recipes={recipes} />}
     </div>
   );
 };
-
 export default Home;

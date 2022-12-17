@@ -1,45 +1,39 @@
-import React from "react";
-import {
-  DetailContainer,
-  DetailPart,
-  HeaderContainer,
-  ImgContainer,
-  IngContainer,
-  OtherPart,
-} from "./Detail.style";
-import { useLocation } from "react-router-dom";
-import diet from "../../assets/diet.svg";
+import React from 'react'
+import { DetailContainer, DetailPart, HeaderContainer, ImgContainer, IngContainer, OtherPart } from './Detail.style'
+import {useLocation} from "react-router-dom"
+import diet from "../../assets/diet.svg"
 
 const Detail = () => {
-  const { state } = useLocation();
-  console.log("state geldi mi:", state);
+ const {state}=useLocation();
+ console.log("state geldi mi:",state);
   return (
-    <DetailContainer>
-      <HeaderContainer>
-        <h1>{state.label}</h1>
-        <img src={diet} alt="" />
-      </HeaderContainer>
-      <DetailPart>
-        <OtherPart>
-          <h4>NUTRIENTS</h4>
+  <DetailContainer>
+    <HeaderContainer>
+      <h1>{state.label} </h1>
+      <img src={diet} alt={diet}/>
+    </HeaderContainer>
 
-          <p>
-            {state.totalNutrients.CA.label} :{" "}
+    <DetailPart>
+      <OtherPart>
+        <h4>NUTRIENTS</h4>
+        
+        <p>
+            {state.totalNutrients.CA.label} :{' '}
             {Math.round(state.totalNutrients.CA.quantity)}
             {state.totalNutrients.CA.unit}
           </p>
           <p>
-            {state.totalNutrients.CHOCDF.label} :{" "}
+            {state.totalNutrients.CHOCDF.label} :{' '}
             {Math.round(state.totalNutrients.CHOCDF.quantity)}
             {state.totalNutrients.CHOCDF.unit}
           </p>
           <p>
-            {state.totalNutrients.CHOLE.label} :{" "}
+            {state.totalNutrients.CHOLE.label} :{' '}
             {Math.round(state.totalNutrients.CHOLE.quantity)}
             {state.totalNutrients.CHOLE.unit}
           </p>
           <p>
-            {state.totalNutrients.ENERC_KCAL.label} :{" "}
+            {state.totalNutrients.ENERC_KCAL.label} :{' '}
             {Math.round(state.totalNutrients.ENERC_KCAL.quantity)}
             {state.totalNutrients.ENERC_KCAL.unit}
           </p>
@@ -50,24 +44,23 @@ const Detail = () => {
               {item.label} : {Math.round(item.total)}
             </p>
           ))}
-        </OtherPart>
+      </OtherPart>
 
-        <ImgContainer>
-          <img src={state.image} alt="default" />
-        </ImgContainer>
+      <ImgContainer>
+      <img src={state.image} alt="default" />
+      </ImgContainer>
 
-        <IngContainer>
-          {state.ingredientLines.map((ingredient, index) => (
-            <div>
-              <p>
-                {index + 1}-{ingredient}{" "}
-              </p>
-            </div>
-          ))}
-        </IngContainer>
-      </DetailPart>
-    </DetailContainer>
-  );
-};
+      <IngContainer>
+        {state.ingredientLines.map((ingredient,index)=>(
+          <div>
+            <p>{index+1}-{ingredient} </p>
+          </div>
+        ))}
+      </IngContainer>
 
-export default Detail;
+    </DetailPart>
+  </DetailContainer>
+  )
+}
+
+export default Detail

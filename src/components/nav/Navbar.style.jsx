@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Flex from "../globalStyles/Flex.style";
+import { Link } from "react-router-dom";
 
-export const Nav = styled(Flex)`
+const Nav = styled(Flex)`
   padding: 1rem 1.5rem;
-  background: ${({theme}) => theme.colors.navbarBgColor}
+  background-color: ${({ theme }) => theme.colors.navbarBgColor};
 `;
 
 export const Brand = styled(Link)`
@@ -20,12 +20,12 @@ export const Brand = styled(Link)`
 `;
 
 export const Menu = styled(Flex)`
-    @media (max-width: ${({theme}) => theme.screens.lg}) {
-        flex-direction:column;
-        width:100%;
-        max-height: ${({isOpen}) => isOpen ? "400px" : "0"};
-        overflow:hidden;
-    }
+  @media (max-width: ${({ theme }) => theme.screens.lg}) {
+    flex-direction:column;
+    width: 100%;
+    max-height: ${({isOpen})=>(isOpen ? "400px" : "0")};
+    overflow: hidden;
+  }
 `;
 
 export const MenuLink = styled(Link)`
@@ -46,10 +46,13 @@ export const MenuLink = styled(Link)`
 `;
 
 export const Hamburger = styled.div`
-    cursor:pointer;
-    color: ${({theme}) => theme.colors.MainColor};
-    display:none;
-    @media (max-width: ${({theme}) => theme.screens.lg}) {
-        display:block;
-    }
-`
+  display: none;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.mainColor};
+
+  @media (max-width: ${({ theme }) => theme.screens.lg}) {
+    display: block;
+  }
+`;
+
+export default Nav;
