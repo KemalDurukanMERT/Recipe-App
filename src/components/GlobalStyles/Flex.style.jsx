@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Flex=styled.div`
+export const Flex=styled.div`
     
     display: flex;
     justify-content:${({justify})=>(justify ? justify : "center")};
@@ -8,4 +8,4 @@ const Flex=styled.div`
     flex-wrap:${({wrap})=> wrap && wrap}
 
 `;
-export default Flex;
+
