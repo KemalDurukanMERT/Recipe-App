@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState } from "react";
-// import { useEffect } from "react";
 import Header from "../../components/header/Header";
 import Cards from "../../components/cards/Cards";
 import { HeaderText, HomeImg, ImgDiv } from "../home/Home.style";
