@@ -52,7 +52,7 @@ const Detail = () => {
 
       <IngContainer>
         {state.ingredientLines.map((ingredient,index)=>(
-          <div>
+          <div key={index}>
             <p>{index+1}-{ingredient} </p>
           </div>
         ))}
