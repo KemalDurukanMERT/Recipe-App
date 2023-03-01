@@ -3,8 +3,7 @@ import Flex from '../../components/globalStyles/Flex.style';
 
 
  export const LoginContainer= styled(Flex)`
-  height: 100%;
-  background-image: url('https://picsum.photos/1600/900');
+  background-image: url('https://picsum.photos/1600');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -14,13 +13,14 @@ import Flex from '../../components/globalStyles/Flex.style';
 export const FormContainer= styled(Flex)`
   width: 40rem;
   height: 40rem;
-  max-height: 80%;
   max-width: 50rem;
   background: rgba(0, 173, 181, 0.5);
   border-radius: 50%;
   border: 2px solid #e1f1dd;
   padding: 0.5rem;
   flex-direction: column;
+  margin-top:6.5rem;
+  margin-bottom:6.8rem;
 `;
 
 export const Header = styled.h1`

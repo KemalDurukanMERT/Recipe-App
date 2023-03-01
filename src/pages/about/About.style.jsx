@@ -7,6 +7,11 @@ export const AboutMe = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  @media screen and (max-width:730px){
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+  }
 `;
 export const Left = styled.div`
   width: 30%;
@@ -17,6 +22,9 @@ export const Left = styled.div`
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.3);
+  @media screen and (max-width:730px){
+    width:70%;
+  }
 `;
 export const Image = styled.div`
   max-width: 450px;

@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   LoginContainer,
   StyledImg,
@@ -8,27 +9,25 @@ import {
   StyledForm,
   StyledButton,
 } from "./Login.style";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import meal from "../../assets/meal.svg";
-const Login = ({log,setLog}) => {
- 
+const Login = ({ log, setLog }) => {
+  document.cookie = "SameSite=None; Secure";
   const navigate = useNavigate();
-  
-  const userInfo={
-    username:"admin"
-  }
+
+  const userInfo = {
+    username: "admin",
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sessionStorage.setItem("user",JSON.stringify(userInfo))
-    navigate(-1)
-    setLog("Logout")
-  }
-
-
+    sessionStorage.setItem("user", JSON.stringify(userInfo));
+    navigate(-1);
+    setLog("Logout");
+  };
 
   return (
-    <LoginContainer SameSite="None" Secure>
+    <LoginContainer>
       <FormContainer>
         <StyledImg src={meal} />
         <Header>{"<CW/>"}Recipe</Header>
