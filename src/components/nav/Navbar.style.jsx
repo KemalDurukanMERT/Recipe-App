@@ -21,9 +21,9 @@ export const Brand = styled(Link)`
 
 export const Menu = styled(Flex)`
   @media (max-width: ${({ theme }) => theme.screens.lg}) {
-    flex-direction:column;
+    flex-direction: column;
     width: 100%;
-    max-height: ${({isOpen})=>(isOpen ? "400px" : "0")};
+    max-height: ${({ isOpen }) => (isOpen ? "400px" : "0")};
     overflow: hidden;
   }
 `;
@@ -33,7 +33,24 @@ export const MenuLink = styled(Link)`
   padding: 1rem 2rem;
   cursor: pointer;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.linkColor};
+  color: ${({ theme }) => theme.colors.logoColor};
+  transition: all 0.3s ease-in;
+  &:hover {
+    color: ${({ theme }) => theme.colors.mainColor};
+    font-weight: bold;
+  }
+  @media (max-width: ${({ theme }) => theme.screens.lg}) {
+    width: 100%;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.mainColor};
+  }
+`;
+
+export const Logout = styled.div`
+  text-align: center;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.logoColor};
   transition: all 0.3s ease-in;
   &:hover {
     color: ${({ theme }) => theme.colors.mainColor};

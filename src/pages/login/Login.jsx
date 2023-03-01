@@ -10,7 +10,7 @@ import {
 } from "./Login.style";
 import {useNavigate} from "react-router-dom"
 import meal from "../../assets/meal.svg";
-const Login = () => {
+const Login = ({log,setLog}) => {
  
   const navigate = useNavigate();
   
@@ -22,12 +22,13 @@ const Login = () => {
     e.preventDefault();
     sessionStorage.setItem("user",JSON.stringify(userInfo))
     navigate(-1)
+    setLog("Logout")
   }
 
 
 
   return (
-    <LoginContainer>
+    <LoginContainer SameSite="None" Secure>
       <FormContainer>
         <StyledImg src={meal} />
         <Header>{"<CW/>"}Recipe</Header>

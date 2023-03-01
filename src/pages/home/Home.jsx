@@ -28,7 +28,7 @@ const Home = () => {
       alert("Fill the Form");
     }
   };
-  console.log(recipes);
+  // console.log(recipes);
 
   // useEffect(() => {
   //   getData();

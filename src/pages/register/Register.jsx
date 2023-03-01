@@ -11,7 +11,7 @@ import {
 } from "../login/Login.style";
 import meal from "../../assets/meal.svg";
 
-const Register = () => {
+const Register = ({log,setLog}) => {
   const navigate = useNavigate();
 
   const userInfo = {
@@ -33,7 +33,7 @@ const Register = () => {
             <StyledInput placeholder="Enter username" type="text" />
             <StyledInput placeholder="Enter Password" type="password" />
             <StyledInput placeholder="Password Again" type="password" />
-            <StyledButton type="submit">Register</StyledButton>
+            <StyledButton type="submit" onClick={()=> setLog("Logout")}>Register</StyledButton>
           </StyledForm>
         </FormContainer>
       </LoginContainer>
